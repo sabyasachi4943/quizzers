@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Topic.css';
 
-const Topic = ({topic}) => {
-  const { name, logo, total } = topic;
+const Topic = ({topic , handleStartQuiz}) => {
+  const {id, name, logo, total} = topic;
   return (
     <div>
       <div className="topic-container">
@@ -11,7 +12,9 @@ const Topic = ({topic}) => {
           <img src={logo} alt="" />
         </div>
         <p>Total Quizes number {total}</p>
-        <button>start quiz</button>
+        <Link to={`/quiz/${id}`}>
+          <button onClick={() => handleStartQuiz(topic)}>start quiz</button>
+        </Link>
       </div>
     </div>
   );

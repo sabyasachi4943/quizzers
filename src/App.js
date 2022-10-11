@@ -20,8 +20,16 @@ function App() {
           path: "/quiz",
           element: <Quizes></Quizes>,
         },
+        {
+          path: '/quiz/:quizId',
+          loader: async ({ params }) => {
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`);
+          },
+          element: <Quizes></Quizes> 
+        }
       ],
     },
+    { path : '*' , element: <div>sorry nothing is here. </div>}
   ]);
   return (
     <div className="App">
