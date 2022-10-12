@@ -1,18 +1,19 @@
 import React from "react";
-
-const Question = ({ qquestion }) => {
+import "./Question.css";
+const Question = ({ qquestion, handleOptionClick }) => {
   console.log(qquestion);
   const { id, question, correctAnswer, options } = qquestion;
-  const handleOptionClick = (option, qquestion) => {
-    console.log(option);
-    console.log(qquestion);
-  }
+  
   return (
-    <div>
-      <p>{question}</p>
-      {options.map((option) => (
-        <button onClick={() => handleOptionClick(option, qquestion) }>{option}</button>
-      ))}
+    <div className="q-container">
+      <div className="question-container">
+        <p>{question}</p>
+        {options.map((option) => (
+          <button onClick={() => handleOptionClick(option, qquestion)}>
+            {option}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
