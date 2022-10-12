@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import { XAxis, YAxis, Tooltip, LineChart, Line } from "recharts";
 
 import { useLoaderData } from "react-router-dom";
@@ -7,7 +7,6 @@ import "./Stats.css";
 const Stats = () => {
   const quizTopic = useLoaderData();
   const topics = quizTopic.data;
-  console.log(topics);
   return (
     <div>
       <LineChart width={500} height={400} data={topics}>

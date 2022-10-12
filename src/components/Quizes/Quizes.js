@@ -8,12 +8,20 @@ const Quizes = () => {
   console.log(quiz)
   const questions = quiz.data.questions;
 
-  const handleOptionClick = (option, qquestion) => {
-    console.log(option);
-    console.log(qquestion);
+  const [score, setScore] = useState(0);
+  const [incorrect, setIncorrect] = useState(0);
+
+
+  const handleOptionClick = (option, qquestion, showToast) => {
+    if (option === qquestion.correctAnswer) {
+      console.log("correct");
+      showToast();
+      setScore(score + 1);
+    }
+  
   };
 
-  const { update, setUpdate } = useState();
+
 
   return (
     <div>
@@ -27,9 +35,11 @@ const Quizes = () => {
             ></Question>
           ))}
         </div>
+
+
         <div className="marks-container">
-          <p>correct</p>
-          <p>incorrect</p>
+          <p>correct{score}</p>
+          <p>incorrect{incorrect}</p>
         </div>
       </div>
     </div>
