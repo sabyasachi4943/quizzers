@@ -13,7 +13,7 @@ const Topic = ({topic , handleStartQuiz}) => {
         </div>
         <p>Total Quizes number {total}</p>
         <Link to={`/quiz/${id}`}>
-          <button onClick={() => handleStartQuiz(topic)}>start quiz</button>
+          <button>start quiz</button>
         </Link>
       </div>
     </div>

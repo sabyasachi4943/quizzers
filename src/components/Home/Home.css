@@ -3,3 +3,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.hero-container{
+  margin: 25px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  text-align: left;
+}
