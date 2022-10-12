@@ -10,9 +10,9 @@ const Quizes = () => {
     <div>
       <div className="quiz-container">
         {
-          questions.map(question => <Question
-            key={question.id}
-            question={question}
+          questions.map(qquestion => <Question
+            key={qquestion.id}
+            qquestion={qquestion}
           ></Question>)
         }
       </div>
