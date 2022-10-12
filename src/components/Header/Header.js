@@ -7,9 +7,15 @@ const Header = () => {
       <div className="header-container">
         <h1>Quizzers</h1>
         <nav className="navbar">
-          <Link to="/">home</Link>
-          <Link to='/stats'>stats</Link>
-          <Link to='/blog'>blog</Link>
+          <Link className="navLink" to="/">
+            Home
+          </Link>
+          <Link className="navLink" to="/stats">
+            Stats
+          </Link>
+          <Link className="navLink" to="/blog">
+            Blog
+          </Link>
         </nav>
       </div>
     </div>

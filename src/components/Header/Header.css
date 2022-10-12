@@ -3,3 +3,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.navLink {
+  margin: 5px;
+  padding: 10px;
+  text-decoration: none;
+}

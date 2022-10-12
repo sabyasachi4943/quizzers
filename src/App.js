@@ -5,6 +5,7 @@ import Quizes from "./components/Quizes/Quizes";
 import Main from "./layouts/Main";
 import React from "react";
 import Stats from "./components/Stats/Stats";
+import Blog from "./components/Blog/Blog";
 
 function App() {
   const router = createBrowserRouter([
@@ -35,6 +36,10 @@ function App() {
           },
           element: <Quizes></Quizes>,
         },
+        {
+          path: "/blog",
+          element: <Blog></Blog>,
+        }
       ],
     },
     { path: "*", element: <div>sorry nothing is here. </div> },
