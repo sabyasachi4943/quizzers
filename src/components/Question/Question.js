@@ -4,7 +4,7 @@ import "./Question.css";
 
 const Question = ({ qquestion, handleOptionClick }) => {
   const { question, correctAnswer, options } = qquestion;
-  const [correctans, setCorrectans] = useState("see");
+  const [correctans, setCorrectans] = useState("see correct ans");
 
   const handleCorrectAnswer = (correctAnswer) => {
     setCorrectans(correctAnswer);
@@ -31,8 +31,8 @@ const Question = ({ qquestion, handleOptionClick }) => {
           </button>
         ))}
 
-        <p>{correctAnswer}</p>
-        <button onClick={() => handleCorrectAnswer(correctAnswer)}>
+        <br />
+        <button className="button" onClick={() => handleCorrectAnswer(correctAnswer)}>
           {correctans}
         </button>
 

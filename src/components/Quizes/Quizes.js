@@ -9,14 +9,19 @@ const Quizes = () => {
   const questions = quiz.data.questions;
 
   const [score, setScore] = useState(0);
-  const [incorrect, setIncorrect] = useState(0);
+  const [arr, setArr] = useState([]);
+  
 
 
   const handleOptionClick = (option, qquestion, showToast) => {
-    if (option === qquestion.correctAnswer) {
-      console.log("correct");
+    
+    const exists = arr.find(option => option === qquestion.correctAnswer);
+    if (exists) {
+      alert("already answered")
+    } else {
+      const newAns = [...arr, option];
+      setArr(newAns);
       showToast();
-      setScore(score + 1);
     }
   
   };
@@ -37,10 +42,7 @@ const Quizes = () => {
         </div>
 
 
-        <div className="marks-container">
-          <p>correct{score}</p>
-          <p>incorrect{incorrect}</p>
-        </div>
+        
       </div>
     </div>
   );
